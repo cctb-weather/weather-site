@@ -1,6 +1,11 @@
-.current-weather-box {
-  width: 640px;
-  max-width: 640px;
-  height: 290px;
-  background-color: gainsboro;
+.current-weather-box{
+  display: flex;
+}
+.left-weather-box{
+  display: flex;
+  align-items: start;
+}
+.right-weather-box{
+  display: flex;
+  align-items: end;
 }

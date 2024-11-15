@@ -1,32 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/current-weather.css" />
-    <link rel="stylesheet" href="/css/today-forecast.css" />
-    <link rel="stylesheet" href="/css/weakly-weather.css" />
-  </head>
-  <body>
-    <main>
-      <div class="today-weather-box">
-        <!-- Write HTML of current weather -->
-        <div class="current-weather-box">
-          <span>Current Weather</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet" href="/css/current-weather.css" />
+  <link rel="stylesheet" href="/css/today-forecast.css" />
+  <link rel="stylesheet" href="/css/weakly-weather.css" />
+</head>
+
+<body>
+  <main>
+    <div class="today-weather-box">
+      <!-- Write HTML of current weather -->
+      <div class="current-weather-box">
+
+        <div class="left-weather-box">
+          <div class="current-city">
+            <h1>Vancouver</h1>
+          </div>
+          <div class="weather-box">
+            <div class="info-weather">
+              <div class="weather">
+                <img src="/icons/weather/wind.svg">
+                <p class="temperature">16<span>°C</span></p>
+                <p class="description">Broken Clouds</p>
+              </div>
+            </div>
+            <div class="weather-details">
+              <div class="humidity">
+                <i class='bx bx-water'></i>
+                <div class="text">
+                  <div class="info-humidity">
+                    <span>0%</span>
+                  </div>
+                  <p>humidity</p>
+                </div>
+              </div>
+              <div class="wind">
+                <i class='bx bx-wind'></i>
+                <div class="text">
+                  <div class="info-wind">
+                    <span>0 Km/h</span>
+                  </div>
+                  <p>Wind Speed</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Write HTML of today's forecast -->
-        <div class="today-forecast-box">
-          <span>Today's forecast</span>
+
+        <div class="right-weather-box">
+          <img src="/icons/weather/fog.svg">
         </div>
       </div>
+
+
+
+
 
       <!-- Write HTML of today's forecast -->
-      <div class="weakly-weather-box">
-        <span>Weekly weather</span>
+      <div class="today-forecast-box">
+        <span>Today's forecast</span>
       </div>
-    </main>
-  </body>
+    </div>
+
+    <!-- Write HTML of today's forecast -->
+    <div class="weakly-weather-box">
+      <span>Weekly weather</span>
+    </div>
+  </main>
+</body>
+
 </html>
