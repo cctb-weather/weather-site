@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Get Weather</h1>
+
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button onclick="getWeather()">Get Weather</button>
+
+    <div id="weatherResult"></div>
+
+    <script>
+        function getWeather() {
+            const city = document.getElementById('cityInput').value;
+            if (!city) {
+                alert("Please enter a city name");
+                return; // stops the execution of the function
+            }
+            fetch(`/weather?city=${city}`)  // Make a request to your Flask API
+                .then(response => response.json())  // Parse the JSON response
+                .then(data => {
+                    // Update the HTML with the weather data
+                    const weatherResult = document.getElementById('weatherResult');
+
+                    if (data.error) { //error handling
+                        weatherResult.innerHTML = `<p>Error: ${data.error}</p>`;
+                    } else {
+                        weatherResult.innerHTML = `
+                            <p>Temperature: ${data.temperature} °C</p>
+                            <p>Description: ${data.description}</p>
+                            <p>Wind Speed: ${data.wind_speed} m/s</p>
+                            <p>Humidity: ${data.humidity}%</p>
+                        `;
+                    }
+                })
+                .catch(error => { // handles network errors
+                        const weatherResult = document.getElementById('weatherResult');
+                        weatherResult.innerHTML = `<p>An error occurred: ${error}</p>`;
+                    });
+        }
+    </script>
+</body>
+</html>
