@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 import requests  # For making requests to an external weather API
 
 app = Flask(__name__)
-
+# hii
 # Replace with your actual API key
 WEATHER_API_KEY = "8356db19f8ee3e8ef2fe65204f7d2792" #api.openweathermap.org
 
