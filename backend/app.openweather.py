@@ -1,11 +1,35 @@
+# HOW TO RUN 
+# Go to the work directory: C:\Users\nelsi\OneDrive\CCTB\IST107 - Internet Programming and Web Applications\WeatherApp - localhost
+# Open Anaconda doveAI CMD
+# Run `app.openweather.py`
+# This provides the current weather condition
+
 # USING OPENWEATHER API
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import requests  # For making requests to an external weather API
+import os
 
 app = Flask(__name__)
-# hii
+
 # Replace with your actual API key
 WEATHER_API_KEY = "8356db19f8ee3e8ef2fe65204f7d2792" #api.openweathermap.org
+
+@app.route('/debug')
+def debug_paths():
+    paths_info = {
+        "Current Working Directory": os.getcwd(),
+        "Script Directory": os.path.dirname(os.path.abspath(__file__)),
+        "Parent Directory": os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),
+        "Attempted Frontend Path": os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'frontend')),
+        "Files in Current Directory": os.listdir(os.getcwd()),
+        "Files in Parent Directory": os.listdir(os.path.abspath(os.path.join(os.getcwd(), '..')))
+    }
+    return jsonify(paths_info)
+
+@app.route('/')
+def index():
+    # Try to serve the file
+    return send_from_directory('../frontend', 'index.html')
 
 @app.route('/weather', methods=['GET'])
 def get_weather():
@@ -74,4 +98,4 @@ def get_weather():
         return jsonify({"error": f"Error parsing weather data: {e}"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True, port=8878) 
