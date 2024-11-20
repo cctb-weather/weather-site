@@ -1,11 +1,14 @@
 body, html {
   margin: 0;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   color: #555;
+  background-image: url('/images/background-blue-sky.jpg');
+  background-size: cover;
 }
 
 main {
@@ -14,18 +17,17 @@ main {
   gap: 2rem;
 }
 
+.card {
+  background-color: rgba(248, 249, 250, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .today-weather-box {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.weekly-forecast-box {
-  background-color: #f8f9faa4;
-  width: 300px;
-  padding: 12px 20px 8px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .current-weather-box {

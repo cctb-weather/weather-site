@@ -1,3 +1,8 @@
+.weekly-forecast-box {
+  width: 300px;
+  padding: 12px 20px 8px 20px;
+}
+
 .weekly-forecast-box p {
   margin: 0;
 }
