@@ -1,11 +1,83 @@
-.current-weather-box{
+
+.current-weather-box {
+  max-width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid black;
+  padding: 1.5rem;
+}
+
+.left-weather-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-city h1 {
+  font-size: 350%; 
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.weather-box {
   display: flex;
 }
-.left-weather-box{
-  display: flex;
-  align-items: start;
+
+.info-weather .weather {
+  margin-right: 1rem;
 }
-.right-weather-box{
+
+.temperature {
+  font-size: 3rem; 
+  font-weight: 300;
+}
+
+.description {
+  display: none;
+}
+
+.weather-details {
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid #d1d5db;
+}
+
+.humidity i,
+.wind i {
+  display: none;
+}
+
+.humidity,
+.wind {
+  margin-bottom: 1rem;
+}
+
+.text p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.right-weather-box {
+  margin-left: 40%;
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.right-weather-box img {
+  width: 8rem; 
+  height: 8rem; 
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.info-weather .weather img {
+  display: flex;
+  
+}
+
+p {
+  font-size: 100%;
+  color: black;
+  font-weight: bold;
 }
