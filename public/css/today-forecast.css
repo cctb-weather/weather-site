@@ -1,6 +1,29 @@
 .today-forecast-box {
   width: 640px;
   max-width: 640px;
-  height: 160px;
-  background-color: gainsboro;
+  display: flex;
+  padding: 20px;
 }
+
+.hour {
+  text-align: center;
+  padding: 10px;
+  flex: 1;
+}
+
+.time{
+  margin-bottom: 8px;
+  color:#666;
+}
+
+.hour img {
+  width: 48px;
+  height: auto;
+  margin-bottom: 5px;
+}
+.temperature {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+
