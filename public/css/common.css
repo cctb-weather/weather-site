@@ -30,13 +30,13 @@ main {
   gap: 2rem;
 }
 
-.current-weather-box {
+/* .current-weather-box {
   background-color: gainsboro;
   width: 300px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
+} */
 
 .resize {
   width: 300px;
