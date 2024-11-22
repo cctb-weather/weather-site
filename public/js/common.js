@@ -52,3 +52,23 @@ const weatherIcons = {
 function getWeatherIcon(code) {
   return `/icons/weather/${weatherIcons[code]}`;
 }
+
+/**
+ * get the current location of the user
+ *
+ * getLocation().then((position) => {
+ *  console.log(position.lat, position.lon);
+ * });
+ *
+ * @returns Promise<{lat: number, lon: number}>
+ */
+function getLocation() {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      resolve({
+        lat: position.coords.latitude,
+        lon: position.coords.longitude,
+      });
+    }, reject);
+  });
+}
