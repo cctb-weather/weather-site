@@ -1,6 +1,6 @@
 .weekly-forecast-box {
   width: 300px;
-  padding: 12px 20px 8px 20px;
+  padding: 0 20px;
 }
 
 .weekly-forecast-box p {
@@ -8,21 +8,35 @@
 }
 
 .weekly-forecast-box .weather-icon {
-  width: 32px;
+  width: 40px;
   height: auto;
 }
 
 .day-forecast {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-bottom: 1px solid #bcbcbc;
-  padding: 16px 0;
+  border-bottom: 1px solid #b6b5b5;
+  padding-top: 6px;
   font-size: 18px;
+  padding-bottom: 10px;
 }
 
 .day-forecast:last-child {
   border-bottom: none;
+}
+
+.day-forecast .weather-text {
+  font-size: 14px;
+  font-weight: normal;
+  color:#666;
+}
+
+.day-forecast .day-of-week-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.day-forecast .day-of-week {
+  width: 48px;
 }
 
 .max-temperature {

@@ -72,3 +72,17 @@ function getLocation() {
     }, reject);
   });
 }
+
+const API_URL = "https://weather-api-server-fy1z.onrender.com";
+
+function getCurrentWeatherApiUrl({ lat, lon }) {
+  return `${API_URL}/weather?lat=${lat}&lon=${lon}`;
+}
+
+function getDayForecastApiUrl({ lat, lon }) {
+  return `${API_URL}/day_forecast?lat=${lat}&lon=${lon}`;
+}
+
+function getWeeklyForecastApiUrl({ lat, lon }) {
+  return `${API_URL}/week_forecast?lat=${lat}&lon=${lon}`;
+}
