@@ -25,8 +25,8 @@ function displayWeeklyForecast() {
           icon: icon,
           text: dayForecast.weather.text,
         },
-        max_temp_c: dayForecast.max_temp_c,
-        min_temp_c: dayForecast.min_temp_c,
+        max_temp_c: dayForecast.max_temp_c.toFixed(1),
+        min_temp_c: dayForecast.min_temp_c.toFixed(1),
       });
       weeklyForecastBox.appendChild(forecast);
     }
