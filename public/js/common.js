@@ -49,8 +49,63 @@ const weatherIcons = {
   1282: "thunderstorms-snow.svg",
 };
 
+const weatherBackground = {
+  1000: "clear_day.jpg",
+  1003: "cloudy_and_clear.jpg",
+  1006: "cloudy_and_clear.jpg",
+  1009: "cloudy.jpg",
+  1030: "mist.jpg",
+  1063: "partly_rain.jpg",
+  1066: "clear_day.jpg",
+  1069: "sleet.jpg",
+  1072: "drizzle.jpg",
+  1087: "thunderstorm_2.jpg",
+  1114: "snow.jpg",
+  1117: "snow.jpg",
+  1135: "fog.jpg",
+  1147: "fog.jpg",
+  1150: "drizzle.jpg",
+  1153: "drizzle.jpg",
+  1168: "drizzle.jpg",
+  1171: "drizzle.jpg",
+  1180: "drizzle.jpg",
+  1183: "rain.jpg",
+  1186: "partly_rain.jpg",
+  1189: "rain.jpg",
+  1192: "partly_rain.jpg",
+  1195: "rain.jpg",
+  1198: "rain.jpg",
+  1201: "rain.jpg",
+  1204: "sleet.jpg",
+  1207: "sleet.jpg",
+  1210: "partly_rain.jpg",
+  1213: "snow.jpg",
+  1216: "partly_snow.jpg",
+  1219: "snow.jpg",
+  1222: "partly_snow.jpg",
+  1225: "snow.jpg",
+  1237: "hail.jpg",
+  1240: "drizzle.jpg",
+  1243: "partly_rain.jpg",
+  1246: "drizzle.jpg",
+  1249: "sleet.jpg",
+  1252: "sleet.jpg",
+  1255: "partly_snow.jpg",
+  1258: "partly_snow.jpg",
+  1261: "partly_hail.jpg",
+  1264: "partly_hail.jpg",
+  1273: "thunderstorm_rain.jpg",
+  1276: "thunderstorm.jpg",
+  1279: "thunderstorm_snow.jpg",
+  1282: "thunderstorm_snow.jpg",
+};
+
 function getWeatherIcon(code) {
   return `/icons/weather/${weatherIcons[code]}`;
+}
+
+function getWeatherBackground(code) {
+  return `/background/${weatherBackground[code]}`;
 }
 
 /**
@@ -86,3 +141,15 @@ function getDayForecastApiUrl({ lat, lon }) {
 function getWeeklyForecastApiUrl({ lat, lon }) {
   return `${API_URL}/week_forecast?lat=${lat}&lon=${lon}`;
 }
+
+async function setWeatherBackground(code) {
+  const { lat, lon } = await getLocation();
+  const url = getCurrentWeatherApiUrl({ lat: lat, lon: lon });
+  const res = await fetch(url);
+  const data = await res.json();
+  const weatherCode = data.weather.code;
+  const background = getWeatherBackground(weatherCode);
+  document.body.style.backgroundImage = `url(${background})`;
+}
+
+setWeatherBackground();
