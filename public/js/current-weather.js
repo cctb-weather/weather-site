@@ -12,8 +12,7 @@ function getCurrentWeather() {
     });
 }
 
-function createCurrentWeather(currentWeather) { 
-  
+function createCurrentWeather(currentWeather) {
   const icon = getWeatherIcon(currentWeather.weather.code);
   return `
 <div class="left-weather-box">
@@ -32,18 +31,18 @@ function createCurrentWeather(currentWeather) {
         <i class="bx bx-water"></i>
         <div class="text">
           <div class="info-humidity">
-            <p>Humidity</p>
+            <p class="label-text">Humidity</p>
           </div>
-          <span>${currentWeather.humidity}%</span>
+          <span class="value-text">${currentWeather.humidity}%</span>
         </div>
       </div>
       <div class="wind">
         <i class="bx bx-wind"></i>
         <div class="text">
           <div class="info-wind">
-            <p>Wind Speed</p>
+            <p class="label-text">Wind Speed</p>
           </div>
-          <span>${currentWeather.wind_kph} Km/h</span>
+          <span class="value-text">${currentWeather.wind_kph} Km/h</span>
         </div>
       </div>
     </div>
@@ -58,7 +57,7 @@ function createCurrentWeather(currentWeather) {
     alt="Weather Icon"
   />
 </div>
-`; 
+`;
 }
 
 function displayCurrentWeather() {
