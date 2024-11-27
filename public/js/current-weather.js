@@ -52,7 +52,7 @@ function createCurrentWeather(currentWeather) {
 
 <div class="right-weather-box">
   <img class="weather-icon"
-    src="${currentWeather.weather.icon}"
+    src="${icon}"
     width="128"
     height="128"
     alt="Weather Icon"
