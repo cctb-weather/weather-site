@@ -1,21 +1,23 @@
-
 .current-weather-box {
-  max-width: 40rem;
+  min-height: 304px;
+  max-width: 44rem;
   display: flex;
   gap: 2rem;
   align-items: flex-start;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
 }
 
 .left-weather-box {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
 .current-city h1 {
   font-size: 350%;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 .weather-box {
@@ -39,6 +41,18 @@
   margin-left: 1rem;
   padding-left: 1rem;
   border-left: 1px solid #d1d5db;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weather-details .label-text  {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.weather-details .value-text {
+  font-size: 1.25rem;
 }
 
 .humidity i,
@@ -48,7 +62,7 @@
 
 .humidity,
 .wind {
-  margin-bottom: 1rem;
+  margin: auto 0;
 }
 
 .text p {
@@ -65,8 +79,8 @@
 }
 
 .right-weather-box img {
-  width: 8rem;
-  height: 8rem;
+  width: 12rem;
+  height: auto;
   margin-top: 1rem;
   align-items: center;
 }
