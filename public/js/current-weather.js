@@ -14,6 +14,7 @@ function getCurrentWeather() {
 
 function createCurrentWeather(currentWeather) {
   const icon = getWeatherIcon(currentWeather.weather.code);
+  setWeatherBackground(currentWeather.weather.code);
   return `
 <div class="left-weather-box">
   <div class="current-city">
@@ -63,6 +64,7 @@ function createCurrentWeather(currentWeather) {
 function displayCurrentWeather() {
   getCurrentWeather()
     .then((currentWeather) => {
+      stopSkeletonLoading("current-weather-box");
       const weatherElement = createCurrentWeather(currentWeather);
       const weatherBox = document.querySelector(".current-weather-box");
       if (weatherBox) {

@@ -142,12 +142,12 @@ function getWeeklyForecastApiUrl({ lat, lon }) {
   return `${API_URL}/week_forecast?lat=${lat}&lon=${lon}`;
 }
 
-async function setWeatherBackground(code) {
-  const { lat, lon } = await getLocation();
-  const url = getCurrentWeatherApiUrl({ lat: lat, lon: lon });
-  const res = await fetch(url);
-  const data = await res.json();
-  const weatherCode = data.weather.code;
+function stopSkeletonLoading(id) {
+  const el = document.getElementById(id);
+  el.classList.remove("skeleton-loading");
+}
+
+async function setWeatherBackground(weatherCode) {
   const background = getWeatherBackground(weatherCode);
   document.body.style.backgroundImage = `url(${background})`;
 }
