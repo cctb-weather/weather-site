@@ -16,6 +16,8 @@ function displayWeeklyForecast() {
   const weeklyForecastBox = document.querySelector(".weekly-forecast-box");
 
   getWeeklyForecast().then((weeklyForecast) => {
+    stopSkeletonLoading("weekly-forecast-box");
+
     for (let i = 0; i < 7; i++) {
       const dayForecast = weeklyForecast.forecast[i];
       const icon = getWeatherIcon(dayForecast.weather.code);

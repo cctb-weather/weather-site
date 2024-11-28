@@ -142,6 +142,11 @@ function getWeeklyForecastApiUrl({ lat, lon }) {
   return `${API_URL}/week_forecast?lat=${lat}&lon=${lon}`;
 }
 
+function stopSkeletonLoading(id) {
+  const el = document.getElementById(id);
+  el.classList.remove("skeleton-loading");
+}
+
 async function setWeatherBackground(weatherCode) {
   const background = getWeatherBackground(weatherCode);
   document.body.style.backgroundImage = `url(${background})`;

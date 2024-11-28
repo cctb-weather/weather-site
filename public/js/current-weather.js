@@ -64,6 +64,7 @@ function createCurrentWeather(currentWeather) {
 function displayCurrentWeather() {
   getCurrentWeather()
     .then((currentWeather) => {
+      stopSkeletonLoading("current-weather-box");
       const weatherElement = createCurrentWeather(currentWeather);
       const weatherBox = document.querySelector(".current-weather-box");
       if (weatherBox) {

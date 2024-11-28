@@ -38,15 +38,18 @@ main {
   gap: 2rem;
 }
 
-/* .current-weather-box {
-  background-color: gainsboro;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-} */
-
 .resize {
   width: 300px;
   height: 200px;
+}
+
+@keyframes skeleton-loading {
+  to {
+    background-position: left;
+  }
+}
+
+.skeleton-loading {
+  background: linear-gradient(90deg, #ddda 40%, #efefefaa, #ddda 60%) right / 300% 100%;
+  animation: skeleton-loading 1.5s linear infinite;
 }

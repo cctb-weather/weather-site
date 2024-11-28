@@ -15,14 +15,23 @@
     <main>
       <div class="today-weather-box">
         <!-- HTML of current weather -->
-        <div class="current-weather-box card"></div>
+        <div
+          id="current-weather-box"
+          class="current-weather-box card skeleton-loading"
+        ></div>
 
         <!-- Write HTML of today's forecast -->
-        <div class="card today-forecast-box"></div>
+        <div
+          id="today-forecast-box"
+          class="card today-forecast-box skeleton-loading"
+        ></div>
       </div>
 
       <!-- Write HTML of today's forecast -->
-      <div class="card weekly-forecast-box"></div>
+      <div
+        id="weekly-forecast-box"
+        class="card weekly-forecast-box skeleton-loading"
+      ></div>
     </main>
     <script src="/js/common.js"></script>
     <script src="/js/current-weather.js"></script>

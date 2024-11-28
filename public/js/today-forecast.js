@@ -3,7 +3,7 @@ const time = new Date().getHours();
 
 getDayForecast()
   .then((data) => {
-    console.log(data);
+    stopSkeletonLoading("today-forecast-box");
     const forecast = data.forecast;
     todayForecastBox.innerHTML = `
     <div class="hour">
