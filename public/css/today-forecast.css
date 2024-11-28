@@ -1,6 +1,8 @@
 .today-forecast-box {
   width: 640px;
   max-width: 640px;
+  min-height: 172px;
+  box-sizing: border-box;
   display: flex;
   padding: 20px;
 }
