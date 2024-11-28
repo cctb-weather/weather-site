@@ -14,6 +14,7 @@ function getCurrentWeather() {
 
 function createCurrentWeather(currentWeather) {
   const icon = getWeatherIcon(currentWeather.weather.code);
+  setWeatherBackground(currentWeather.weather.code);
   return `
 <div class="left-weather-box">
   <div class="current-city">
