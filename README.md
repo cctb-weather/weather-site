@@ -9,6 +9,12 @@ $ cd weather-site
 $ firebase emulators:start
 ```
 
+## Deployment
+When you merge a pull request to main branch, the new changes will deploy automaticaly.
+
+### Platform
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
+
 ## VScode Extensions
 I add some useful VSCode extensions.
 Please install the extensions.
